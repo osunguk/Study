@@ -1,0 +1,193 @@
+/* {
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+
+#rayout{
+ margin: 0;
+ position: absolute;
+ border: 1px solid rgb(0, 0, 0);
+ width: 375px;
+ height: 667px;
+}
+
+
+.header_icon1{
+  margin : 18px;
+}
+
+.header_icon2{
+  margin : 18px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #2F3A42;
+  position: absolute;
+  width: 375px;
+  height: 56px;
+  left: 0px;
+  top: 0px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+#main{
+width: 375px;
+height: 293px;
+background: #ffffff;
+display: flex;
+}
+
+#main_username{
+display: flex;
+margin-top: 56px;
+margin-left: 20px;
+padding-top: 15px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 15px;
+text-align: center;
+color: #A29898;
+}
+
+#textbox{
+  width: 105px;
+  border: 2px solid rgb(203, 205, 219);
+  border-radius: 3px;
+  margin: 8px;
+  outline:none;
+  box-sizing:border-box;
+  box-shadow:0 0 2px 0 dodgerblue;
+  font-family: Roboto;
+}
+
+#img{
+  margin-left: 255px;
+  margin-top: -65px;
+}
+
+
+.main_inputcommet{
+  display: flex;
+margin-top: 5px;
+margin-left: 20px;
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: 15px;
+text-align: center;
+color: #A29898;
+}
+
+
+
+#list{
+  display: flex;
+  list-style:none;
+  padding-left: 215px;
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+color: rgba(0, 0, 0, 0.7);
+}
+
+#list li{
+  padding: 8px 12px;
+}
+
+
+#main_commet{
+  width: 110px;
+  border: 2px solid rgb(203, 205, 219);
+  border-radius: 3px;
+  margin: 8px;
+  outline:none;
+  box-sizing:border-box;
+  box-shadow:0 0 2px 0 dodgerblue;
+  font-family: Roboto;
+}
+
+#main_tweetbutton{
+  margin-left: 300PX;
+  background: rgb(4, 20, 49);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(35, 43, 59, 0.3);
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+#main_tweetbutton :focus{
+  outline: 0;
+}
+
+#main_tweetbutton :hover{
+background-color: rgba(236, 240, 247, 0.9);
+cursor: pointer;
+}
+
+#reply{
+ display: flex;
+ 
+  background-color: rgb(255, 255, 255);
+  font-family: Roboto;
+
+}
+
+
+.reply_userid{
+  font-style: normal;
+font-weight: bold;
+font-size: 10px;
+line-height: 12px;
+color: #000000;
+}
+
+.reply_date{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: 11px;
+color: rgba(0, 0, 0, 0.7);
+}
+
+.reply_content{
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 10px;
+line-height: 12px;
+color: #000000;
+}
+/* 
+#foot{
+  margin-top: 630px;
+  margin-left: -210px;
+  background-color: aqua;
+} */
+
+#1:focus {
+  
+}

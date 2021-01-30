@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.hi {
+  background-color: blue;
+}
+
+div:hover {
+  background-color: black;
+  animation: scaleBounce 0.1s;
+  -webkit-animation: scaleBounce 0.1s;
+}
+
+@keyframes scaleBounce {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(2);
+  }
+}
+
+@-webkit-keyframes scaleBounce {
+  from {
+    transform: scale(0.7);
+  }
+  to {
+    transform: scale(2);
+  }
+}
