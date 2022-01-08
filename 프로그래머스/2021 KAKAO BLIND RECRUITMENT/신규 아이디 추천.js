@@ -7,7 +7,7 @@ function solution(new_id) {
     let trans = "";
     const numPattern = /[0-9]/;
     const smallLetterPattern = /[a-z]/;
-    for (i of new_id) {
+    for (const i of new_id) {
       if (numPattern.test(i)) trans += i;
       if (smallLetterPattern.test(i)) trans += i;
       if (i === "." || i === "-" || i === "_") {
@@ -58,7 +58,7 @@ function solution(new_id) {
   }
 
   function sequence(new_id) {
-    let result = (firstResult = stepOne(new_id));
+    let result = stepOne(new_id);
     result = stepTwo(result);
     result = stepThree(result);
     result = stepFour(result);
@@ -77,3 +77,30 @@ const c = "123_.def";
 let result = solution(c);
 
 console.log(result);
+
+// 고수분 풀이1
+function solution2(new_id) {
+  const answer = new_id
+    .toLowerCase() // 1
+    .replace(/[^\w-_.]/g, "") // 2
+    .replace(/\.+/g, ".") // 3
+    .replace(/^\.|\.$/g, "") // 4
+    .replace(/^$/, "a") // 5
+    .slice(0, 15)
+    .replace(/\.$/, ""); // 6
+  const len = answer.length;
+  return len > 2 ? answer : answer + answer.charAt(len - 1).repeat(3 - len);
+}
+
+// 고수분 풀이2
+const solution3 = (new_id) => {
+  const id = new_id
+    .toLowerCase()
+    .replace(/[^\w\d-_.]/g, "")
+    .replace(/\.{2,}/g, ".")
+    .replace(/^\.|\.$/g, "")
+    .padEnd(1, "a")
+    .slice(0, 15)
+    .replace(/^\.|\.$/g, "");
+  return id.padEnd(3, id[id.length - 1]);
+};
