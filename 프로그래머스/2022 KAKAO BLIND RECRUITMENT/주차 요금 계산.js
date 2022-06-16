@@ -1,5 +1,9 @@
 function solution(fees, records) {
+  const MAX_TIME = 23 * 60 + 59;
   const [basicTime, basicFee, unitTime, unitFee] = fees;
+  const timeToMinute = (hour, minute) => {
+    return hour * 60 + minute;
+  };
   const processedRecords = records.reduce((acc, cur) => {
     const [time, carNumber, state] = cur.split(" ");
     const [hour, minute] = time.split(":").map((el) => Number(el));
@@ -10,20 +14,20 @@ function solution(fees, records) {
           const record = {
             [carNumber]: {
               isIn: true,
-              useStartTime: hour * 60 + minute,
+              useStartTime: timeToMinute(hour, minute),
               useTime: 0,
             },
           };
           return { ...acc, ...record };
         } else {
           acc[carNumber].isIn = true;
-          acc[carNumber].useStartTime = hour * 60 + minute;
+          acc[carNumber].useStartTime = timeToMinute(hour, minute);
           return acc;
         }
 
       case "OUT":
         const calculateUseTime =
-          hour * 60 + minute - acc[carNumber].useStartTime;
+          timeToMinute(hour, minute) - acc[carNumber].useStartTime;
         acc[carNumber].isIn = false;
         acc[carNumber].useTime = calculateUseTime + acc[carNumber].useTime;
         acc[carNumber].useStartTime = 0;
@@ -39,7 +43,7 @@ function solution(fees, records) {
     const carRecord = processedRecords[car];
     let uncalculatedTime = 0;
     if (carRecord.isIn) {
-      uncalculatedTime = 23 * 60 + 59 - carRecord.useStartTime;
+      uncalculatedTime = MAX_TIME - carRecord.useStartTime;
     }
     arrayRecord.push({
       carNumber: car,
