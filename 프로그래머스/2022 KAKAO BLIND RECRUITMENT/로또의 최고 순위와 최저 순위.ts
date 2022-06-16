@@ -1,4 +1,4 @@
-function test(lottos: number[], win_nums: number[]) {
+function lotto(lottos: number[], win_nums: number[]) {
   lottos.sort((a, b) => a - b);
   win_nums.sort((a, b) => a - b);
   const zeroNumber = lottos.filter((el) => el === 0).length;
