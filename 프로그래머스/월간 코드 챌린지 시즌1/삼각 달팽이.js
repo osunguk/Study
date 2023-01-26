@@ -26,7 +26,7 @@ function solution(n) {
           dic[pos][dic[pos].findIndex((el) => !el)] = cur;
           cur += 1;
         }
-        if (height === 1) {
+        if (height === 1 || height === 2) {
           return;
         }
         recursion(cur, pos - 1, false);
@@ -59,6 +59,6 @@ function solution(n) {
   for (let i of Object.values(dic)) {
     result.push(...i);
   }
-}
 
-solution(7);
+  return result;
+}
