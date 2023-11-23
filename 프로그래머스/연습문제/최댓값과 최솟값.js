@@ -2,15 +2,10 @@ function solution(s) {
   const splited = s.split(' ')
   let max = -Infinity
   let min = Infinity
-  splited.map(el => {
-    if(el > max) max = el;
-    if(el <min) min = el;
+  splited.map((el) => {
+    const compare = Number(el)
+    if (compare > max) max = compare
+    if (compare < min) min = compare
   })
-  max
-  min
-
-  return max+' '+min;
+  return max + ' ' + min
 }
-
-
-solution("1 2 3 4")
