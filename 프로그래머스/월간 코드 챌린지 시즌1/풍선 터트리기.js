@@ -1,3 +1,5 @@
+let cnt = 0;
+let cnt2 = 0;
 function solution(a) {
   const final = new Set();
   const memo = {};
@@ -6,11 +8,13 @@ function solution(a) {
       final.add(left[0]);
       return;
     }
+    cnt++;
     if (memo[JSON.stringify(left) + chance]) {
       return;
     } else {
       memo[JSON.stringify(left) + chance] = true;
     }
+    cnt2++;
     if (chance) {
       for (let i = 1; i <= left.length - 1; i++) {
         const compare = left.slice(i - 1, i + 1);
@@ -30,11 +34,15 @@ function solution(a) {
           recursion(chooseRight, false);
         }
       }
-    }
+
   };
   recursion(a, true);
   return final.size;
 }
+
+solution([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+console.log(cnt);
+console.log(cnt2);
 
 function solution2(a) {
   const first = a[0];
